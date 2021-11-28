@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/*=============================================
+=                      Root                   =
+=============================================*/
+:root {
+  --clr-main-f: hsl(215, 51%, 70%);
+  --clr-primary-f: hsl(0, 0%, 100%);
+
+  --clr-main-bg: hsl(217, 54%, 11%);
+  --clr-primary-bg: hsl(178, 100%, 50%);
+  --clr-card-bg: hsl(216, 50%, 16%);
+
+  --clr-line: hsl(215, 32%, 27%);
+
+  --trans: all 0.2s linear;
+}
+/*=====  End of Root  ======*/
+
+/*=============================================
+=             Custom Reset Styles             =
+=============================================*/
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*=====  End of Custom Reset Styles  ======*/
+
+/*=============================================
+=                Global Styles                =
+=============================================*/
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  background-color: var(--clr-main-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+/*=====  End of Global Styles  ======*/
+
+/**
+ *
+ * Card Section
+ *
+ */
+.card {
+  max-width: 337.5px;
+  width: 90%;
+  background-color: var(--clr-card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* header */
+header {
+  position: relative;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.visible {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.box {
+  position: inherit;
+  inset: inherit;
+  background-color: var(--clr-primary-bg);
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.visible-icon {
+  z-index: 2;
+}
+
+header:hover .visible {
+  display: flex;
+}
+/* End of header */
+
+/* main */
+main {
+  margin: 20px 0;
+  border-bottom: 1px solid var(--clr-line);
+}
+
+.title {
+  font-weight: 600;
+  color: var(--clr-primary-f);
+  transition: var(--trans);
+  font-size: 1.22em;
+  margin-bottom: 20px;
+}
+
+.title:hover {
+  color: var(--clr-primary-bg);
+}
+
+.desc {
+  font-size: 0.9em;
+  color: var(--clr-main-f);
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.coin,
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.coin p {
+  color: var(--clr-primary-bg);
+  font-weight: 400;
+}
+
+.time p {
+  color: var(--clr-main-f);
+}
+
+@media only screen and (min-width: 700px) {
+  .desc {
+    font-size: 1em;
+  }
+}
+/* End of main */
+
+/* footer */
+footer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 35px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-primary-f);
+}
+
+footer p {
+  font-size: 0.85em;
+  color: var(--clr-main-f);
+}
+
+footer span {
+  color: var(--clr-primary-f);
+  transition: var(--trans);
+}
+
+footer span:hover {
+  color: var(--clr-primary-bg);
+}
+/* End of footer */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--clr-main-f);
+}
+
+.attribution a {
+  color: var(--clr-primary-f);
+  transition: var(--trans);
+}
+
+.attribution a:hover {
+  color: var(--clr-primary-bg);
+}
